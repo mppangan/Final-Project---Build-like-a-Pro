@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="MovieVerse - Search, filter, and discover movies."
+    >
+
+    <title>MovieVerse | Movie Explorer</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <a href="#home" class="logo">
+                <span class="logo-icon">🎬</span>
+
+                <span class="logo-text">
+                    MOVIE<span>VERSE</span>
+                </span>
+            </a>
+
+            <div class="nav-links">
+
+                <a href="#home">Home</a>
+
+                <a href="#movies">Movies</a>
+
+                <a href="#about">About</a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main>
+
+        <!-- HERO SECTION -->
+
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+
+                <p class="hero-label">
+                    MOVIE DISCOVERY
+                </p>
+
+                <h1>
+                    Find Your Next
+                    <span>Favorite Movie</span>
+                </h1>
+
+                <p class="hero-description">
+                    Search for movies, explore their details,
+                    filter your results, and discover something new.
+                </p>
+
+                <button
+                    class="hero-button"
+                    id="exploreButton"
+                >
+                    Start Exploring
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- MOVIE EXPLORER -->
+
+        <section class="movies-section" id="movies">
+
+            <div class="section-title">
+
+                <div class="title-accent"></div>
+
+                <div>
+                    <h2>Movie Explorer</h2>
+
+                    <p id="resultsMessage">
+                        Search for a movie to get started.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 SEARCH + FILTERS
+            ========================== -->
+
+            <div class="controls">
+
+                <!-- SEARCH FORM -->
+
+                <form id="searchForm" class="search-form">
+
+                    <input
+                        type="search"
+                        id="searchInput"
+                        placeholder="Search for a movie..."
+                        aria-label="Search for a movie"
+                        required
+                    >
+
+                    <button type="submit">
+                        Search
+                    </button>
+
+                </form>
+
+
+                <!-- GENRE FILTER -->
+
+                <div class="filter">
+
+                    <label for="genreFilter">
+                        Genre
+                    </label>
+
+                    <select id="genreFilter">
+
+                        <option value="all">
+                            All Genres
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- SORT FILTER -->
+
+                <div class="filter">
+
+                    <label for="sortFilter">
+                        Sort By
+                    </label>
+
+                    <select id="sortFilter">
+
+                        <option value="newest">
+                            Newest to Oldest
+                        </option>
+
+                        <option value="oldest">
+                            Oldest to Newest
+                        </option>
+
+                        <option value="az">
+                            Alphabetical A-Z
+                        </option>
+
+                        <option value="za">
+                            Alphabetical Z-A
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 LOADING STATE
+            ========================== -->
+
+            <div
+                class="loading"
+                id="loading"
+                aria-live="polite"
+            >
+
+                <div class="spinner"></div>
+
+                <p>Loading movies...</p>
+
+            </div>
+
+
+            <!-- =========================
+                 ERROR MESSAGE
+            ========================== -->
+
+            <div
+                class="message hidden"
+                id="errorMessage"
+            >
+
+                <div class="message-icon">
+                    ⚠️
+                </div>
+
+                <h3>Something went wrong</h3>
+
+                <p id="errorText">
+                    Please try again.
+                </p>
+
+            </div>
+
+
+            <!-- =========================
+                 NO RESULTS
+            ========================== -->
+
+            <div
+                class="message hidden"
+                id="noResults"
+            >
+
+                <div class="message-icon">
+                    🎬
+                </div>
+
+                <h3>No movies found</h3>
+
+                <p>
+                    Try searching for another movie.
+                </p>
+
+            </div>
+
+
+            <!-- =========================
+                 MOVIE RESULTS
+            ========================== -->
+
+            <div
+                class="movie-grid"
+                id="movieGrid"
+            >
+                <!-- Movie cards are created by JavaScript -->
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ABOUT SECTION
+        ========================== -->
+
+        <section class="about" id="about">
+
+            <div class="about-content">
+
+                <div class="title-accent"></div>
+
+                <h2>About MovieVerse</h2>
+
+                <p>
+                    MovieVerse is a JavaScript final project
+                    that uses the OMDb API to dynamically search
+                    and display movie information.
+                </p>
+
+                <div class="technologies">
+
+                    <span>HTML</span>
+
+                    <span>CSS</span>
+
+                    <span>JavaScript</span>
+
+                    <span>OMDb API</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="footer-logo">
+            🎬 MOVIE<span>VERSE</span>
+        </div>
+
+        <p>
+            © 2026 MovieVerse | JavaScript Final Project
+        </p>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
